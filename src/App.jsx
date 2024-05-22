@@ -30,10 +30,11 @@ function App() {
     <>
       <div className='App'>
         <header>
-
+          <h1>SuperChat</h1>
+          <SignOut />
         </header>
         <section>
-          {user ? <ChatRoom /> : <SignIn />}
+          {(user ? <ChatRoom /> : <SignIn />)}
         </section>
       </div>
     </>
@@ -50,7 +51,7 @@ function SignIn() {
   return (
     <>
       <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <p>Do not violate the community guidelines or you will be banned for life!</p>
+      <p className='welcome-text'>Welcome to my epic chat app!</p>
     </>
   )
 
@@ -101,7 +102,7 @@ function ChatRoom() {
 
       <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Type Message" />
 
-      <button type="submit" disabled={!formValue}>🕊️</button>
+      <button type="submit" disabled={!formValue}>Send</button>
 
     </form>
   </>)
